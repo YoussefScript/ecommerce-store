@@ -17,6 +17,11 @@ const ProductPage = async ({
     const { productId } = await params;
 
     const product = await getProduct(productId);
+
+    if (!product) {
+        return null;
+    }
+
     const suggestedProducts = await getProducts({
         categoryId: product?.category?.id
     });

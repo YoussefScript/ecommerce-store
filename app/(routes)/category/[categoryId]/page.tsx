@@ -12,19 +12,18 @@ import MobileFilters from "./components/mobile-filter";
 export const revalidate = 0;
 
 interface CategoryPageProps {
-    params: {
+    params: Promise<{
         categoryId: string;
-    },
-    searchParams: {
+    }>,
+    searchParams: Promise<{
         colorId?: string;
         sizeId?: string;
-    };
+    }>;
 };
 
-const CategoryPage: React.FC<CategoryPageProps> = async ({
-    params,
-    searchParams
-}: CategoryPageProps) => {
+const CategoryPage: React.FC<CategoryPageProps> = async (props: CategoryPageProps) => {
+    const params = await props.params;
+    const searchParams = await props.searchParams;
 
     const products = await getProducts({
         categoryId: params.categoryId,
@@ -35,6 +34,10 @@ const CategoryPage: React.FC<CategoryPageProps> = async ({
     const sizes = await getSizes();
     const colors = await getColors();
     const category = await getCategory(params.categoryId);
+
+    if (!category) {
+        return null; // Or you could use notFound() from next/navigation
+    }
 
 
     return (

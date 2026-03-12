@@ -1,4 +1,4 @@
-"use clinet";
+"use client";
 
 import { Size, Color } from "@/types";
 import { useSearchParams, useRouter } from "next/navigation";
