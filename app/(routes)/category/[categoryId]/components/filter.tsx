@@ -31,7 +31,7 @@ const Filter: React.FC<FilterProps> = ({ valueKeys, name, data }) => {
         }
 
         const url = qs.stringifyUrl({
-            url: window.location.href,
+            url: window.location.pathname,
             query,
         }, {
             skipNull: true,
