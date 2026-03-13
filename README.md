@@ -6,7 +6,7 @@
 
 ---
 
-## 💅 The Experience
+##  The Experience
 
 - **Cinematic UI/UX**: Designed with a luxury aesthetic, featuring glassmorphism, smooth gradients, and high-frequency animations.
 - **Instant Previews**: Quick-view modals for products to keep the browsing flow uninterrupted.
