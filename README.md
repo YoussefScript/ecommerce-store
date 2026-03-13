@@ -1,9 +1,8 @@
-# FakeStoreName Luxury Storefront ✨
+# E-Commerce Store ✨
 
 ### Developed by **Youssef Emad Kamel**
 
 **FakeStoreName** is a high-end, premium e-commerce storefront designed for the modern fashion and lifestyle industry. It features a cinematic user experience, smooth micro-interactions, and a secure, streamlined checkout process.
-
 ---
 
 ##  The Experience
@@ -60,5 +59,5 @@ All rights reserved. This project is protected by a proprietary [LICENSE](./LICE
 
 ---
 
-*“Style is a way to say who you are without having to speak.”* — **Youssef Emad Kamel**
+
 
