@@ -20,7 +20,8 @@
     font-family: var(--font-urbanist);
     overflow-x: hidden;
     position: relative;
-    width: 100vw;
+    max-width: 100%;
+    width: 100%;
     @apply bg-[#fafafa] text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900;
   }
 }
