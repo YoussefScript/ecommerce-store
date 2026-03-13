@@ -18,7 +18,7 @@ const Navbar = async () => {
                         <Link href="/" className="ml-4 lg:ml-0 flex gap-x-2 items-center">
                             <div className="h-8 w-8 rounded-lg premium-gradient" />
                             <p className="font-extrabold text-2xl tracking-tighter uppercase font-sans">
-                                Luxe<span className="text-indigo-600">.</span>
+                                FakeStoreName<span className="text-indigo-600">.</span>
                             </p>
                         </Link>
                         <MainNav data={categories}/>

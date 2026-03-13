@@ -1,8 +1,8 @@
-# Luxe. Luxury Storefront ✨
+# FakeStoreName Luxury Storefront ✨
 
 ### Developed by **Youssef Emad Kamel**
 
-**Luxe.** is a high-end, premium e-commerce storefront designed for the modern fashion and lifestyle industry. It features a cinematic user experience, smooth micro-interactions, and a secure, streamlined checkout process.
+**FakeStoreName** is a high-end, premium e-commerce storefront designed for the modern fashion and lifestyle industry. It features a cinematic user experience, smooth micro-interactions, and a secure, streamlined checkout process.
 
 ---
 
