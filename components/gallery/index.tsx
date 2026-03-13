@@ -21,13 +21,15 @@ const Gallery: React.FC<GalleryProps> = ({ images = [] }) => {
         </Tab.List>
       </div>
       <Tab.Panels className="aspect-square w-full">
-        {images.map((image) => (
+        {images.map((image, index) => (
           <Tab.Panel key={image.id}>
             <div className="aspect-square relative h-full w-full sm:rounded-lg overflow-hidden">
               <Image
-                fill
                 src={image.url}
                 alt="Image"
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index === 0}
                 className="object-cover object-center"
               />
             </div>

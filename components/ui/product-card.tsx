@@ -39,44 +39,53 @@ const ProductCard: React.FC<ProductCard> = ({
     };
 
     return (
-        <div className="bg-white group cursor-pointer rounded-xl p-3 border-2 space-y-4">
+        <div className="bg-white group cursor-pointer rounded-3xl p-0 border border-gray-100 card-hover overflow-hidden flex flex-col">
             {/* images & actions */}
             <div 
                 onClick={handleClick}
-                className="aspect-square rounded-xl bg-gray-100 relative">
+                className="aspect-[4/5] bg-gray-50 relative overflow-hidden">
                 <Image
                     alt="image"
                     src={data?.images?.[0].url}
                     fill
-                    className="aspect-square object-cover rounded-md"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-110 transition duration-700 ease-in-out"
                 />
-                <div className="opacity-0 group-hover:opacity-100 transition absolute w-full px-6 bottom-5">
-                    <div className="flex gap-6 justify-center">
+                
+                {/* Overlay Badge */}
+                <div className="absolute top-4 left-4 z-10">
+                   <span className="badge-premium">New Arrival</span>
+                </div>
+
+                <div className="opacity-0 group-hover:opacity-100 transition-all duration-500 absolute w-full px-4 bottom-6 translate-y-4 group-hover:translate-y-0">
+                    <div className="flex gap-x-4 justify-center bg-white/20 backdrop-blur-md py-3 rounded-2xl border border-white/30 shadow-2xl">
                         <IconButton 
-                        
                             onClick={onPreview}
-                            icon={<Expand size={20} className="text-gray-600"/>}
+                            icon={<Expand size={18} className="text-gray-900"/>}
                         />
                         <IconButton 
-                        
                             onClick={onAddToCart}
-                            icon={<ShoppingCart size={20} className="text-gray-600"/>}
+                            icon={<ShoppingCart size={18} className="text-gray-900"/>}
                         />
                     </div>
                 </div>
             </div>
             {/* description */}
-            <div>
-                <p className="font-semibold text-lg">
-                    {data.name}
-                </p>
-                <p className="text-sm text-gray-500">
-                    {data.category?.name}
-                </p>
-            </div>
-            {/* price */}
-            <div className="flex items-center justify-between">
-                <Currency value={data?.price}/>
+            <div className="p-5 space-y-2 flex-grow">
+                <div className="space-y-1">
+                    <p className="text-[10px] uppercase tracking-widest text-indigo-600 font-black">
+                        {data.category?.name}
+                    </p>
+                    <p className="font-bold text-lg text-slate-900 group-hover:text-indigo-600 transition-colors duration-300">
+                        {data.name}
+                    </p>
+                </div>
+                {/* price */}
+                <div className="pt-2">
+                    <div className="text-xl font-black text-slate-950">
+                        <Currency value={data?.price}/>
+                    </div>
+                </div>
             </div>
         </div>
     );

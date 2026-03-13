@@ -6,9 +6,11 @@ import { ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
-const NavbarActions = () => {
+import { UserButton, useAuth } from "@clerk/nextjs";
 
+const NavbarActions = () => {
     const [isMounted, setIsMounted] = useState(false);
+    const { userId } = useAuth();
 
     useEffect(() => {
         setIsMounted(true)
@@ -34,6 +36,15 @@ const NavbarActions = () => {
                     {cart.items.length}
                 </span>
             </Button>
+            <UserButton />
+            {!userId && (
+                <Button 
+                    onClick={() => router.push('/sign-in')}
+                    className="bg-gray-100 text-black border-none hover:bg-gray-200"
+                >
+                    Sign In
+                </Button>
+            )}
         </div>
     );
 };

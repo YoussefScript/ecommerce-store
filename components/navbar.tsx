@@ -11,13 +11,18 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <div className="border-b">
+        <div className="glass-header">
             <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-16 items-center">
-                    <Link href="/" className="ml-4 lg:ml-0 flex gap-x-2">
-                        <p className="font-bold text-xl">FakeStoreName</p>
-                    </Link>
-                    <MainNav data={categories}/>
+                <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
+                    <div className="flex items-center">
+                        <Link href="/" className="ml-4 lg:ml-0 flex gap-x-2 items-center">
+                            <div className="h-8 w-8 rounded-lg premium-gradient" />
+                            <p className="font-extrabold text-2xl tracking-tighter uppercase font-sans">
+                                Luxe<span className="text-indigo-600">.</span>
+                            </p>
+                        </Link>
+                        <MainNav data={categories}/>
+                    </div>
                     <NavbarActions /> 
                 </div>
             </Container>
