@@ -12,20 +12,22 @@ const Navbar = async () => {
     const categories = await getCategories();
 
     return (
-        <div className="glass-header">
+        <div className="glass-header w-full overflow-hidden">
             <Container>
-                <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between">
-                    <div className="flex items-center">
+                <div className="relative px-4 sm:px-6 lg:px-8 flex h-20 items-center justify-between gap-x-2">
+                    <div className="flex items-center flex-1 min-w-0">
                         <MobileNav data={categories} />
-                        <Link href="/" className="ml-0 lg:ml-0 flex gap-x-2 items-center">
-                            <div className="h-8 w-8 rounded-lg premium-gradient hidden sm:block" />
-                            <p className="font-extrabold text-xl sm:text-2xl tracking-tighter uppercase font-sans">
+                        <Link href="/" className="flex gap-x-2 items-center min-w-0">
+                            <div className="h-8 w-8 rounded-lg premium-gradient hidden sm:block shrink-0" />
+                            <p className="font-extrabold text-lg sm:text-2xl tracking-tighter uppercase font-sans truncate">
                                 FakeStoreName<span className="text-indigo-600">.</span>
                             </p>
                         </Link>
                         <MainNav data={categories}/>
                     </div>
-                    <NavbarActions /> 
+                    <div className="shrink-0">
+                        <NavbarActions /> 
+                    </div>
                 </div>
             </Container>
         </div>
