@@ -14,7 +14,7 @@ const ProductList: React.FC<ProductListProps> = ({
   return (
     <div className="space-y-4">
         <h3
-            className="font-bold text-3xl"
+            className="font-bold text-2xl sm:text-3xl"
         >
             {title}
         </h3>
