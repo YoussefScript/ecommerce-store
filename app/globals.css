@@ -8,12 +8,19 @@
 }
 
 @layer base {
-  html,
+  html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+  
   body {
     height: 100%;
     margin: 0;
     padding: 0;
     font-family: var(--font-urbanist);
+    overflow-x: hidden;
+    position: relative;
+    width: 100vw;
     @apply bg-[#fafafa] text-slate-900 antialiased selection:bg-indigo-100 selection:text-indigo-900;
   }
 }
